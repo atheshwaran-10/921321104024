@@ -29,13 +29,16 @@ const Products = () => {
 
   console.log(products);
   return (
-    <div className="flex  w-full items-center justify-center">
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4  xl:grid-cols-4 lg:grid-cols-4 2xl:grid-cols-4 gap-8 p-3">
+    <div className="flex  w-full items-center justify-center  bg-[#f3f3f3] mt-12">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3  xl:grid-cols-3 lg:grid-cols-3 2xl:grid-cols-3 gap-8 p-3">
         {isLoading ? (
-          <Loader ind={8} />
+          <Loader />
         ) : products ? (
           products.map((product, ind) => (
-            <div key={ind} className="w-full">
+            <div
+              key={ind}
+              className="w-full border rounded-lg border-gray-400 p-4"
+            >
               <ProductCard index={ind} item={product} key={ind} />
             </div>
           ))

@@ -1,28 +1,11 @@
-import React from "react";
-import { Card, Skeleton } from "@nextui-org/react";
+import { Loader } from "lucide-react";
 
-export default function Loader({ ind }: { ind: number }) {
-  const cards = [];
+const Loading = () => {
+  return (
+    <div className="h-full w-full flex items-center justify-center">
+      <Loader className="h-6 w-6 text-muted-foreground animate-spin text-black" />
+    </div>
+  );
+};
 
-  for (let i = 0; i < ind; i++) {
-    cards.push(
-      <Card className="w-[250px] space-y-5 p-4" radius="lg">
-        <Skeleton className="rounded-lg " disableAnimation={true}>
-          <div className="h-32 rounded-lg bg-default-300"></div>
-        </Skeleton>
-        <div className="space-y-1 flex flex-row gap-x-5">
-          <Skeleton
-            className="w-3/5 h-3 rounded-lg "
-            disableAnimation={true}
-          ></Skeleton>
-          <Skeleton
-            className="w-2/5 h-2 rounded-lg"
-            disableAnimation={true}
-          ></Skeleton>
-        </div>
-      </Card>
-    );
-  }
-
-  return cards;
-}
+export default Loading;
