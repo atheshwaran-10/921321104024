@@ -13,7 +13,7 @@ const access_token = process.env.ACCESS_TOKEN;
 
 interface Product {
   id?: string;
-  name: string;
+  productName: string;
   price: number;
   rating: number;
   discount: number;
